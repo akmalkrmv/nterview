@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "nterview-server"
+  },
+  "targets": {
+    "nterview-server": {
+      "hosting": {
+        "nterview": [
+          "nterview-server"
+        ]
+      }
+    }
+  }
+}
