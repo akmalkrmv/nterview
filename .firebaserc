@@ -6,7 +6,7 @@
     "nterview-server": {
       "hosting": {
         "nterview": [
-          "nterview-server"
+          "nterview"
         ]
       }
     }
