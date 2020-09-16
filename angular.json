@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nterview:build"
+            "browserTarget": "nterview:build",
+            "port": 4255
           },
           "configurations": {
             "production": {
