@@ -1,25 +1,27 @@
-<mat-toolbar>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    mode="over"
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="isHeadset$ ? 'dialog' : 'navigation'"
   >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>nterview</span>
-  <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+    <app-sidenav (close)="drawer.toggle()"></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="layout-content">
+    <mat-toolbar class="mat-toolbar-dark">
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="title">
+        {{ title }}
+      </div>
+      <div class="fill-remaining-space"></div>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
